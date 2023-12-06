@@ -1,0 +1,275 @@
+<!doctype html>
+	<head>
+		<title>Register account</title>
+		<link rel="icon" href="favicon.png" type="image" sizes="16x16">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	*{
+		text-decoration: none;
+	}
+	body{
+		font-family: arial  ;
+		margin:0px;
+	}
+	.font{
+		color:#ff6600;
+	}
+	a.font:hover{
+		text-decoration: underline ;
+		color: #ff944d ;
+	}
+	.header{
+		background-color: #333333 ;
+		height : 60px;
+		width : 100% ;
+		position: relative;
+		display: inline-block; 
+	}
+	.isi{
+	   	display:flex ;
+	}
+	.tengah{
+		margin: auto ;
+		margin-top: 20px;
+		margin-bottom : 40px;
+		margin-right: 30px;
+		border : groove ;
+		border-width : 3px 1px 1px 1px ;
+		box-shadow : 1px 1px 1px 1px grey;
+		width : 40%;
+		border-style: outset ; 
+		border-top-color : #ff6600 ;
+		padding : 30px 60px 30px 60px ;
+		text-align : justify ;
+	}
+	.samping{  
+		margin-left: 10px ;
+		margin-right:20px ;
+		font-weight: 300px ;
+		max-width: 255px;
+		line-height: 20px;
+	}
+	
+	.image{
+		background-image: url('background.png');
+		background-size : auto ;
+		background-attachment : absolute  ;
+		background-position : right ;	
+		background-repeat: no-repeat ; 
+		padding: 30px 30px; 
+	}
+	.nav{
+		overflow: hidden ;
+		cursor:pointer ;
+	}
+	.nav a{
+		float: left;
+		text-align: center;
+	}
+	.Blacks:hover{
+		background-color: black;
+	}
+	.navigation a{
+		color: white;
+		position : relative ;
+	}
+	.nav a:hover{
+		color: #00bfff ;
+	}
+	.subnavigation a{
+		padding-right:10px ;
+		padding-bottom: 15px; 
+		color: grey ;
+		font-size: 15px ; 
+	}
+	
+	.footer{ 
+		background-color: #4d4d4d ;
+		overflow: hidden ;
+		line-height: 20px ;
+		padding: 20px 0px 30px 0px;
+		width : 100% ;
+		float: left; 
+	}
+	.Input{
+		margin : 10px; 
+		padding: 10px ;
+		width: 94%;
+		border: groove 1px;
+		display: inline-block;
+	}
+
+	#button[disabled]{
+		color: white ;
+		background-color: grey;
+		border : grey solid 1px ;
+		cursor: no-drop ;
+	}
+	#button {
+		background-color:#ff8000;
+		border : #ff8000 solid 1px ;
+		color : white ; 
+		cursor:pointer ; 
+	}
+	#button[disabled]:hover{
+		color: white ;
+		background-color: grey;
+	}
+	#button:hover{
+		background-color: #ff944d ;
+	}
+	#button:active{
+		background-color: #cc5200 ;
+	}
+	#info:before{content:"\1F6C8"}
+	</style>
+	<script>
+		function accbutton(){
+			if(document.getElementById("button").disabled == false){
+				document.getElementById("button").disabled = true;
+			}else if(document.getElementById("button").disabled == true){
+			document.getElementById("button").disabled = false;	
+			}
+		}
+		
+		function check(){
+			var x = document.forms["formfinal"]["email"].value;
+			var y = document.forms["formfinal"]["pass"].value;
+			var z = document.forms["formfinal"]["confirmPass"].value;
+			
+			if(x == "") {
+				text = "Please enter your email." ;
+				document.getElementById("response").innerHTML = text;
+			}else{
+				text = "" ;
+				document.getElementById("response").innerHTML = text;
+			}
+			if(y != z){
+				text="Invalid password." ;
+				document.getElementById("response2").innerHTML = text;
+				document.getElementById("response1").innerHTML = text;
+				return false; 
+			}else{
+				text="" ;
+				document.getElementById("response2").innerHTML = text;
+				document.getElementById("response1").innerHTML = text;
+			}
+			if(y == "") {
+				text = "Please enter your password." ;
+				document.getElementById("response1").innerHTML = text;
+			}else{
+				text = "" ;
+				document.getElementById("response1").innerHTML = text;
+			}
+			if(z == "") {
+				text = "Please enter your password." ;
+				document.getElementById("response2").innerHTML = text;
+			}else{
+				text = "" ;
+				document.getElementById("response2").innerHTML = text;
+			}
+			if(x == "" || z == "" || y == ""|| z!= y){
+				return false ;
+			}
+		}
+	</script>
+	<body>
+		<div class="header">
+			<a href="Register Account.html"><img src="Logoali.png"  alt="Alibaba Cloud" height="60px" style="float:left; padding-left:25px;"></a> 
+			<div  style="float : right; font-size: 15px;" class=" navigation nav">
+				<a class="Blacks" style="padding:20px ;" ><label class="fa fa-globe" ></label > Intl - English</a>
+				<a style="padding:20px ;">Homepage</a>
+				<a style="padding:20px ;">Login</a> 
+			</div>
+		</div>
+		
+		<div class="image">
+			<h2 style="text-align: center; font-size: 35px; font-weight: normal;">Create Your Alibaba Cloud Account</h2>
+			<p style="text-align: center; font-weight: normal;">Free Access to Over 50 Products and Up to 12 Months Usage for Elastic Compute Service!</p>
+		</div>
+		<div class="isi">
+			<div class="tengah">
+				<form action="berhasil.html" name="formfinal" onsubmit="return check()" method="POST" enctype="Text">
+					<div>
+					<select style="width:98%;" id="country" class="Input" >
+						<option value = "Malaysia">Malaysia</option>
+						<option value = "Australia">Australia</option>
+						<option value = "United Kingdom">United Kingdom</option>
+						<option value = "Indonesia">Indonesia</option>
+						<option value = "China">China</option>
+						<option value = "Israel">Israel</option>
+						<option value = "Palestine">Palestine</option>
+						<option value = "India">India</option>
+						<option value = "Ireland">Ireland</option>
+					</select>
+					<small class="font" id="info" style="float:center;" >Country/region will be used for currency and tax purposes and cannot be changed after registration.</small>
+					</div>
+					
+					<p>
+						<Input type="email" name="email"  class="Input" style="background:transparent;" maxlength="40" placeholder="Enter your email"></Input> 
+						<small id="response" style="color:red;" ></small>
+					</p>
+					<p>
+						<Input type="password" name="pass"  class="Input" style="background:transparent;" maxlength="40" placeholder="Enter your password"></input>
+						<small id="response1" style="color:red;" ></small>
+					</p>
+					<p>
+						<Input type="password" name="confirmPass"  class="Input" style="background:transparent;" maxlength="40" placeholder="Confirm your password"></input>
+						<small id="response2" style="color:red;" ></small>
+					</p>
+					</p>
+					<input type="checkbox" onclick="accbutton()" value="check" style="float: left; font-size:17px;" >
+						<small>I hereby agree to the Alibaba Cloud International Website <a href="" class="font">Membership Agreement</a>, <a href="" class="font">Privacy Policy</a>, 
+						<a href="" class="font">Product Terms</a> and <a href="" class="font">Terms of Use</a>, under which I am contracting with Alibaba Cloud (Singapore) Private Limited.
+						</small>
+					<input type="submit" id="button" style="width: 98%;" class="Input" value="Confirm" disabled></input>
+					<center>Already a member?<a href="" class="font"> Sign in</a></center>
+			</form>	
+			</div>
+			<div class="samping" style="font-size:12px ;">
+				<h3>Account Benefits & Registration Tips</h3>
+				<h4>Free Trial</h4>
+				<h5 style="color:grey ;">
+					Get free hands-on experience with 50+ products. Now up to 12 Months for Elastic Compute Service!
+				</h5>
+				<h4>Premium Support Services</h4>
+				<label class="font">1-on-1 pre-sale consultation</label>, 24/7 after-sales technical support with 6 free tickets per quarter
+
+				<h4>How do I select the country or region of my account?</h4>
+				<h5 style="color:grey ;" >
+					For enterprise customers, please select the account registration country/region based on your business license. If not, you may be unable to obtain the correct invoice for tax deduction, and may not be eligible for your local tax free policy, or may even be unable to pay for the invoice.
+				</h5>
+			</div>
+		</div>
+		
+		<div class="footer">
+			<div style="font-size: 15px; padding:0px 20px 10px;" class="navigation nav">
+				<a style="padding-right:20px ;">About us</a>
+				<a style="padding-right:20px ;">Privacy Policy</a>
+				<a style="padding-right:20px ;">Legal</a> 
+				<a style="padding-right:20px ;">Notice List</a> 
+			</div>
+			<div style="padding:0px 20px 0px ;" class="subnavigation nav">
+				<a >Alibaba group</a>
+				<a >Taobao Marketplace</a>
+				<a >Tmall</a> 
+				<a >Juhuasuan</a> 
+				<a >AliExpress</a>
+				<a >Alibaba.com</a>
+				<a >1688</a> 
+				<a >Alimama</a>
+				<a >Alitrip</a>
+				<a >YunOS</a>
+				<a >AliTelecom</a> 
+				<a >AutoNavi</a>
+				<a >UCWeb</a>
+				<a >Umeng</a>
+				<a >Xiami</a> 
+				<a >DingTalk</a>
+				<a >Alipay</a>
+			</div>
+			<small style="color: grey; padding:0px 20px 0px ;">© 2009-2021 Copyright by Alibaba Cloud All rights reserved</small>
+		</div>
+	</body>
+	</head>
+</html>
